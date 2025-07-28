@@ -1,3 +1,8 @@
 streamlit
 pandas
-huggingface_hub
+numpy
+matplotlib
+seaborn
+scikit-learn
+xgboost
+plotly

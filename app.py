@@ -9,22 +9,21 @@ import os
 from scipy.stats import zscore
 
 
-# Page setup
+
 st.set_page_config(page_title="AI Data Assistant", layout="wide")
 st.title("📊 Data Analysis Assistant")
 
 
 
-# Upload CSV
+
 uploaded_file = st.file_uploader("Upload your CSV file", type="csv")
 
-# Process file if uploaded
+
 if uploaded_file:
     df = pd.read_csv(uploaded_file)
     st.success(" Data loaded successfully.")
     st.dataframe(df.head())
 
-    # Show basic analysis
     if st.checkbox("Show basic analysis"):
         st.subheader(" Statistical Summary")
         st.write(df.describe())
@@ -38,7 +37,6 @@ if uploaded_file:
         st.subheader(" Categorical Columns")
         st.write(df.select_dtypes(include='object').columns.tolist())
 
-    # Show basic visuals
     if st.checkbox("Show basic visuals"):
         numeric_cols = df.select_dtypes(include='number').columns
         categorical_cols = df.select_dtypes(include='object').columns
@@ -62,7 +60,7 @@ if uploaded_file:
             st.pyplot(fig)
 
     st.markdown("---")
-    st.header("🧹 Missing Data Handling")
+    st.header(" Missing Data Handling")
 
     if df.isnull().values.any():
         st.write("Your dataset contains missing values.")
@@ -127,7 +125,6 @@ if uploaded_file:
         st.write(f"Found {outlier_rows.shape[0]} rows with at least one outlier.")
         st.dataframe(outlier_rows.head(10))
 
-    # Intelligent Dashboard
     st.markdown("---")
     st.header(" Data Insights Dashboard")
 

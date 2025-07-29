@@ -1,10 +1,9 @@
-streamlit
+streamlit==1.24.0
 pandas==1.5.3
-numpy
-scikit-learn
-matplotlib
-seaborn
-plotly
+numpy==1.24.3
+scikit-learn==1.2.2
+matplotlib==3.7.1
+seaborn==0.12.2
+plotly==5.14.1
 shap==0.44.1
-imbalanced-learn
-
+imbalanced-learn==0.10.1
